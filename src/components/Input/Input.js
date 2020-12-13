@@ -38,7 +38,7 @@ class Input extends Component {
                 <p>state:</p>
                 {JSON.stringify(this.state)}
                 <form>
-                    <label>Feeling?</label>
+        <label>{this.props.feebackName}?</label>
                     <input
                         type="number"
                         min="1"
