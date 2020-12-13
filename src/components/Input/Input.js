@@ -1,16 +1,16 @@
 // imports
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 // class
 class Input extends Component {
-    
+
     // feedbackValue = this.props.feebackValue;
 
     state = {
         feedbackItem: {
-            [this.props.feebackName]: '', 
+            [this.props.feebackName]: '',
         }
     }
 
@@ -23,7 +23,7 @@ class Input extends Component {
     handleChange = (event, inputType) => {
         console.log(inputType, '=', event.target.value)
         this.setState({
-            feedbackItem:{
+            feedbackItem: {
                 [inputType]: event.target.value,
             }
         })
@@ -38,12 +38,16 @@ class Input extends Component {
                 <p>state:</p>
                 {JSON.stringify(this.state)}
                 <form>
-        <label>{this.props.feebackName}?</label>
-                    <input
-                        type="number"
-                        min="1"
-                        max="5"
-                        onChange={(event) => this.handleChange(event, this.props.feebackName)} />
+                    <label>{this.props.feebackName}?</label>
+                    {(this.props.feedbackType === "text")
+                        ? <textarea
+                            onChange={(event) => this.handleChange(event, this.props.feebackName)} />
+                        : <input
+                            type="number"
+                            min="1"
+                            max="5"
+                            onChange={(event) => this.handleChange(event, this.props.feebackName)} />
+                    }
                     <button type="submit" onClick={this.submit}>Next</button>
                 </form>
             </div>

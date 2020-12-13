@@ -14,8 +14,9 @@ class Comments extends Component {
                 {JSON.stringify(this.state)}
                 <h2>Any comments you want to leave?</h2>
                 <Input 
-                next="comments"
-                feebackName="comments" />
+                next="review"
+                feebackName="comments"
+                feedbackType="text" />
             </div>
         ) // end return
     } // end render
