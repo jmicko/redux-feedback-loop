@@ -1,5 +1,7 @@
 // imports
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 // class
 class Feeling extends Component {
@@ -15,10 +17,16 @@ class Feeling extends Component {
         })
     }
 
+    submit = () => {
+        console.log('saving feeling:', this.state.feeling);
+        this.props.dispatch({ type: 'ADD_RESPONSE', payload: this.state.feeling });
+        // this.props.history.push('/understanding');
+    }
+
     render() {
         return (
             <div>
-                {JSON.stringify(this.state)}
+                {JSON.stringify(this.props)}
                 <h2>How are you feeling today?</h2>
                 <form>
                     <label>Feeling?</label>
@@ -27,12 +35,16 @@ class Feeling extends Component {
                         min="1"
                         max="5"
                         onChange={(event) => this.handleChange(event, 'feeling')} />
-                    <button type="submit">Next</button>
+                    <button type="submit" onClick={this.submit}>Next</button>
                 </form>
             </div>
         ) // end return
     } // end render
 } // end class
 
-// export
-export default Feeling;
+//export
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+})
+
+export default connect(putReduxStateOnProps)(Feeling);
