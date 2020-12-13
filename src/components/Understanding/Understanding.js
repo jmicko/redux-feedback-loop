@@ -12,9 +12,9 @@ class Understanding extends Component {
                 {JSON.stringify(this.props)}
                 <p>state:</p>
                 {JSON.stringify(this.state)}
-                <h2>hello from Understanding component</h2>
+                <h2>How well are you understanding the content?</h2>
                 <Input 
-                next="understanding"
+                next="support"
                 feebackName="understanding" />
             </div>
         ) // end return
