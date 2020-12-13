@@ -20,7 +20,7 @@ class Feeling extends Component {
     submit = () => {
         console.log('saving feeling:', this.state.feeling);
         this.props.dispatch({ type: 'ADD_RESPONSE', payload: this.state.feeling });
-        // this.props.history.push('/understanding');
+        this.props.history.push('/understanding');
     }
 
     render() {
