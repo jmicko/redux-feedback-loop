@@ -14,7 +14,7 @@ class Support extends Component {
                 {JSON.stringify(this.state)}
                 <h2>How well are you being supported?</h2>
                 <Input 
-                next="support"
+                next="comments"
                 feebackName="support" />
             </div>
         ) // end return
