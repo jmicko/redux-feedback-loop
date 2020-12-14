@@ -1,10 +1,15 @@
 // imports
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 // class
 class Review extends Component {
 
+    submit = () => {
+        this.props.submitFeedback();
+        this.props.history.push('/confirm');
+    }
 
     render() {
         return (
@@ -21,7 +26,7 @@ class Review extends Component {
                 })}
                 {/* TODO - add button to submit all data to server via axios call passed in on props
                 then redirect to success page */}
-                <button >Submit!</button>
+                <button onClick={this.submit} >Submit!</button>
             </div>
         ) // end return
     } // end render
@@ -33,4 +38,4 @@ const putReduxStateOnProps = (reduxState) => ({
 })
 
 // export
-export default connect(putReduxStateOnProps)(Review);
+export default withRouter(connect(putReduxStateOnProps)(Review));
