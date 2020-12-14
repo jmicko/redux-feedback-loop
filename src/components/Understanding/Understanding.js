@@ -8,14 +8,14 @@ class Understanding extends Component {
     render() {
         return (
             <div>
-                <p>props:</p>
+                {/* <p>props:</p>
                 {JSON.stringify(this.props)}
                 <p>state:</p>
-                {JSON.stringify(this.state)}
+                {JSON.stringify(this.state)} */}
                 <h2>How well are you understanding the content?</h2>
                 <Input 
                 next="support"
-                feebackName="understanding" />
+                feebackName="Understanding" />
             </div>
         ) // end return
     } // end render
