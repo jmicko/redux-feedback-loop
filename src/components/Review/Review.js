@@ -1,22 +1,32 @@
 // imports
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 // class
 class Review extends Component {
+
+    submit = () => {
+        this.props.submitFeedback();
+        this.props.history.push('/confirm');
+    }
+
     render() {
         return (
             <div>
                 <h2>Review Your Feedback</h2>
                 {/* pull all submitted feedback from redux and display it on dom */}
                 {this.props.reduxState.feedbackReducer.map((feedbackItem, i) => {
-                    return(
-                        // checking to make sure evertthing comes back right from dom
-                        <p key={i}>{JSON.stringify(feedbackItem)}</p>
-                        )
+                    return (
+                        <div key={i}>
+                            {/* checking to make sure evertthing comes back right from dom */}
+                            <p>{Object.keys(feedbackItem)} - {Object.values(feedbackItem)}</p>
+                        </div>
+                    )
                 })}
                 {/* TODO - add button to submit all data to server via axios call passed in on props
                 then redirect to success page */}
+                <button onClick={this.submit} >Submit!</button>
             </div>
         ) // end return
     } // end render
@@ -28,4 +38,4 @@ const putReduxStateOnProps = (reduxState) => ({
 })
 
 // export
-export default connect(putReduxStateOnProps)(Review);
+export default withRouter(connect(putReduxStateOnProps)(Review));

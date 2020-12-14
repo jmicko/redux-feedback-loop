@@ -33,10 +33,10 @@ class Input extends Component {
     render() {
         return (
             <div>
-                <p>props:</p>
+                {/* <p>props:</p>
                 {JSON.stringify(this.props)}
                 <p>state:</p>
-                {JSON.stringify(this.state)}
+                {JSON.stringify(this.state)} */}
                 <form>
                     <label>{this.props.feebackName}?</label>
                     {(this.props.feedbackType === "text")

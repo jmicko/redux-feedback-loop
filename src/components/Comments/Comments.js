@@ -8,14 +8,14 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                <p>props:</p>
+                {/* <p>props:</p>
                 {JSON.stringify(this.props)}
                 <p>state:</p>
-                {JSON.stringify(this.state)}
+                {JSON.stringify(this.state)} */}
                 <h2>Any comments you want to leave?</h2>
                 <Input 
                 next="review"
-                feebackName="comments"
+                feebackName="Comments"
                 feedbackType="text" />
             </div>
         ) // end return

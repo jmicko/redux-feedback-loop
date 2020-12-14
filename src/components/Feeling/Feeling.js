@@ -16,14 +16,14 @@ class Feeling extends Component {
     render() {
         return (
             <div>
-                <p>props:</p>
+                {/* <p>props:</p>
                 {JSON.stringify(this.props)}
                 <p>state:</p>
-                {JSON.stringify(this.state)}
+                {JSON.stringify(this.state)} */}
                 <h2>How are you feeling today?</h2>
                     <Input 
                     next="understanding"
-                    feebackName="feeling" />
+                    feebackName="Feeling" />
             </div>
         ) // end return
     } // end render

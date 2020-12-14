@@ -8,14 +8,14 @@ class Support extends Component {
     render() {
         return (
             <div>
-                <p>props:</p>
+                {/* <p>props:</p>
                 {JSON.stringify(this.props)}
                 <p>state:</p>
-                {JSON.stringify(this.state)}
+                {JSON.stringify(this.state)} */}
                 <h2>How well are you being supported?</h2>
                 <Input 
                 next="comments"
-                feebackName="support" />
+                feebackName="Support" />
             </div>
         ) // end return
     } // end render

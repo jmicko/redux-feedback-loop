@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { HashRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 
 import Feeling from "../Feeling/Feeling"
 import Understanding from "../Understanding/Understanding"
@@ -12,8 +14,18 @@ import './App.css';
 
 class App extends Component {
 
-  // TODO - add axios call to send data to server, 
-  // send it as props to Review component
+  submitFeedback = () => {
+    console.log('In function submit');
+    // feedback object can be taken directly from redux
+    axios.post('/feedback', this.props.reduxState.feedbackReducer)
+    .then((response) => {
+        console.log('back from POST', response.data);
+    }).catch((error) => {
+        console.log('error with POST', error)
+        alert('Something wrong with the POST')
+    })
+    // this.props.dispatch( { type: 'END_FEEDBACK' } );
+}
 
   render() {
     return (
@@ -29,12 +41,19 @@ class App extends Component {
           <Route path="/understanding" component={Understanding} />
           <Route path="/support" component={Support} />
           <Route path="/comments" component={Comments} />
-          <Route path="/review" component={Review} />
-          {/* TODO - add success component */}
+          <Route path="/review" >
+            <Review submitFeedback={this.submitFeedback}/>
+          </Route>
         </Router>
       </div>
     );
   }
 }
 
-export default App;
+// need redux state
+const putReduxStateOnProps = (reduxState) => ({
+  reduxState
+})
+
+// export
+export default connect(putReduxStateOnProps)(App);
