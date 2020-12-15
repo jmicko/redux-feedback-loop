@@ -17,7 +17,7 @@ app.post('/feedback', (req, res) => {
     console.log(`Adding feedback`, newFeedback); // console logging newFeedback onto server console
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                     VALUES ($1, $2, $3, $4);`;  // query is a request for data
-    pool.query(queryText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments]) // communicating to database, a command to insert new value
+    pool.query(queryText, [newFeedback.Feeling, newFeedback.Understanding, newFeedback.Support, newFeedback.Comments]) // communicating to database, a command to insert new value
         .then(result => { // once database receives data correctly, we receive the updated status
             res.sendStatus(201);
         }).catch(error => {
