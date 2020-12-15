@@ -16,11 +16,10 @@ class Review extends Component {
             <div>
                 <h2>Review Your Feedback</h2>
                 {/* pull all submitted feedback from redux and display it on dom */}
-                {this.props.reduxState.feedbackReducer.map((feedbackItem, i) => {
+                {Object.keys(this.props.reduxState.feedbackReducer).map((feedbackItem, i) => {
                     return (
                         <div key={i}>
-                            {/* checking to make sure evertthing comes back right from dom */}
-                            <p>{Object.keys(feedbackItem)} - {Object.values(feedbackItem)}</p>
+                            <p>{feedbackItem} - {Object.values(this.props.reduxState.feedbackReducer)[i]}</p>
                         </div>
                     )
                 })}

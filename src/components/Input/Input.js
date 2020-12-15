@@ -9,9 +9,7 @@ class Input extends Component {
     // feedbackValue = this.props.feebackValue;
 
     state = {
-        feedbackItem: {
-            [this.props.feebackName]: '',
-        }
+        feedbackItem: []
     }
 
     submit = () => {

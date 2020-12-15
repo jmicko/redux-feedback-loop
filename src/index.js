@@ -12,7 +12,9 @@ import { Provider } from 'react-redux';
 //feedback reducer
 const feedbackReducer = (state=[], action) => {
     if (action.type === 'ADD_RESPONSE'){
-        return [...state, action.payload]
+        console.log(action.payload);
+        // return [...state, action.payload]
+        return {...state, ...action.payload};
     }
     return state;
 }
