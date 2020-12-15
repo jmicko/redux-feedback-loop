@@ -8,7 +8,7 @@ class Review extends Component {
 
     submit = () => {
         this.props.submitFeedback();
-        this.props.history.push('/confirm');
+        this.props.history.push('/success');
     }
 
     render() {

@@ -9,6 +9,7 @@ import Understanding from "../Understanding/Understanding"
 import Support from "../Support/Support"
 import Comments from "../Comments/Comments"
 import Review from "../Review/Review"
+import Success from "../Success/Success"
 
 import './App.css';
 
@@ -44,6 +45,7 @@ class App extends Component {
           <Route path="/review" >
             <Review submitFeedback={this.submitFeedback}/>
           </Route>
+          <Route path="/success" component={Success} />
         </Router>
       </div>
     );
