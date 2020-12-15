@@ -19,12 +19,13 @@ class Review extends Component {
                 {Object.keys(this.props.reduxState.feedbackReducer).map((feedbackItem, i) => {
                     return (
                         <div key={i}>
+                            {/* not sure how to use the value of feedbackItem to dig into the
+                                feedbackReducer object, so I turned the values into an array
+                                and used the index postion to grab the right one */}
                             <p>{feedbackItem} - {Object.values(this.props.reduxState.feedbackReducer)[i]}</p>
                         </div>
                     )
                 })}
-                {/* TODO - add button to submit all data to server via axios call passed in on props
-                then redirect to success page */}
                 <button onClick={this.submit} >Submit!</button>
             </div>
         ) // end return

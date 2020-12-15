@@ -8,10 +8,6 @@ class Understanding extends Component {
     render() {
         return (
             <div>
-                {/* <p>props:</p>
-                {JSON.stringify(this.props)}
-                <p>state:</p>
-                {JSON.stringify(this.state)} */}
                 <h2>How well are you understanding the content?</h2>
                 <Input 
                 next="support"

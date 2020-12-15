@@ -43,6 +43,7 @@ class App extends Component {
           <Route path="/support" component={Support} />
           <Route path="/comments" component={Comments} />
           <Route path="/review" >
+            {/* pass in axios call function to the component that calls it */}
             <Review submitFeedback={this.submitFeedback}/>
           </Route>
           <Route path="/success" component={Success} />

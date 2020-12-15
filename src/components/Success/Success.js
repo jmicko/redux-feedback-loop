@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 class Success extends Component {
 
     done = () => {
+        // nav back home on button click
         this.props.history.push('/');
     }
 

@@ -13,7 +13,11 @@ import { Provider } from 'react-redux';
 const feedbackReducer = (state=[], action) => {
     if (action.type === 'ADD_RESPONSE'){
         console.log(action.payload);
-        // return [...state, action.payload]
+        // honestly not sure if I need to expand state here, but I don't want to test it
+        // need to expand whateever comes in as action.payload because 
+        // okay look idk what's going on here but it works. It allowed me to put any 
+        // key value pair into the feedbackItem object in state, so I can just make 
+        // new components without worrying about that
         return {...state, ...action.payload};
     }
     return state;
